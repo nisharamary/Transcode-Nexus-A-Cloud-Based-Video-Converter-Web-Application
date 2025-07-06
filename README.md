@@ -6,7 +6,7 @@
 
 ---
 
-## 🏧 Architecture Diagram
+## 🏮 Architecture Diagram
 
 ```
 User Browser
@@ -34,6 +34,7 @@ Converted Video Output
 * Secure upload handling and size restriction
 * Dockerized for easy deployment
 * Hosted on AWS EC2 with NGINX reverse proxy
+* Organized with separate static CSS and templates
 
 ---
 
@@ -44,6 +45,7 @@ Converted Video Output
 | Backend API      | Python (Flask)          |
 | Video Processing | FFmpeg (via subprocess) |
 | Frontend         | HTML5 + Bootstrap       |
+| Styling          | CSS (external file)     |
 | Containerization | Docker                  |
 | Reverse Proxy    | NGINX                   |
 | Hosting          | AWS EC2                 |
@@ -57,13 +59,18 @@ Converted Video Output
 transcode-nexus/
 ├── app/
 │   ├── app.py
+│   ├── static/
+│   │   └── css/
+│   │       └── style.css
 │   ├── templates/
-│   │   └── index.html
+│   │   ├── index.html
+│   │   └── success.html
 │   ├── uploads/
 │   └── converted/
 ├── Dockerfile
 ├── requirements.txt
 ├── nginx.conf
+├── .gitignore
 └── README.md
 ```
 
@@ -75,14 +82,14 @@ transcode-nexus/
 
 ```bash
 # Clone the repository
-git clone https://github.com/nisharamary/Transcode-Nexus.git
-cd transcode-nexus
+git clone https://github.com/nisharamary/Transcode-Nexus-A-Cloud-Based-Video-Converter-Web-Application.git
+cd Transcode-Nexus-A-Cloud-Based-Video-Converter-Web-Application
 
 # Build Docker image
 docker build -t transcode-nexus .
 
 # Run the container
-docker run -d -p 5000:5000 --name converter transcode-nexus
+docker run -d -p 3000:3000 --name converter transcode-nexus
 
 # Access in browser
 http://localhost:3000
@@ -108,10 +115,10 @@ http://localhost:3000
 5. Clone repo & build:
 
    ```bash
-   git clone https://github.com/nisharamary/Transcode-Nexus.git
-   cd transcode-nexus
+   git clone https://github.com/nisharamary/Transcode-Nexus-A-Cloud-Based-Video-Converter-Web-Application.git
+   cd Transcode-Nexus-A-Cloud-Based-Video-Converter-Web-Application
    sudo docker build -t transcode-nexus .
-   sudo docker run -d -p 5000:5000 --name converter transcode-nexus
+   sudo docker run -d -p 3000:3000 --name converter transcode-nexus
    ```
 6. Configure NGINX:
 
@@ -176,12 +183,11 @@ Students seeking bonus credit can implement:
 
 ## 🔗 GitHub Repository
 
-[👉 View on GitHub](https://github.com/nisharamary/Transcode-Nexus.git)
+[👉 View on GitHub](https://github.com/nisharamary/Transcode-Nexus-A-Cloud-Based-Video-Converter-Web-Application.git)
 
 ---
 
-## 👩‍🏫 Authors / Credits
+## 👩‍🏫 Author / Credits
 
-* **Your Name**
+* **Nishara Mary K**
 * Project for: Cloud & DevOps Mini Capstone Project
-
